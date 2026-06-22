@@ -23,7 +23,7 @@ repository               : "DiuDiu777/DiuDiu777.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "main-figure.jpg"
   name             : "Zihao Rao (饶子豪)"
   pronouns         : # example: "she/her"  
   bio              : "Ph.D. Student in Computer Science @ Fudan University. Researching Rust, AI4SE & Static Analysis."
@@ -83,13 +83,13 @@ author:
   zhihu            : # Username
 
 # Publication Category - The following the list of publication categories and their headings
-publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
-  conferences:
-    title: 'Conference Papers'
+# publication_category:
+  # books:
+  #   title: 'Books'
+  # manuscripts:
+  #   title: 'Journal Articles'
+  # conferences:
+  #   title: 'Conference Papers'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews

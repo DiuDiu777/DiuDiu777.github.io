@@ -26,25 +26,21 @@ author_profile: true
 
 {% for post in site.portfolio %}
   {% if post.title == "Selected Poems" %}
-    <article class="portfolio-poems-preview">
-      <div class="portfolio-poems-preview__body">
-        <p class="portfolio-poems-preview__eyebrow">Original poems · 2016-2025</p>
-        <h2 class="archive__item-title">
-          <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title }}</a>
+    <section class="portfolio-poems-teaser" aria-labelledby="selected-poems-preview">
+      <header class="portfolio-poems-teaser__header">
+        <h2 id="selected-poems-preview" class="archive__item-title">
+          {{ post.title }}
         </h2>
-        <p class="portfolio-poems-preview__summary">{{ post.excerpt }}</p>
-        <div class="portfolio-poems-preview__list" aria-label="Selected poem preview">
-          <span>2025 · 题新居</span>
-          <span>2024 · 相思曲</span>
-          <span>2023 · 抒怀三首</span>
+      </header>
+
+      <div class="portfolio-poems-teaser__window">
+        <div class="portfolio-poems-teaser__content">
+          {{ post.content }}
         </div>
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink" class="portfolio-poems-preview__link">Read poems</a>
+        <div class="portfolio-poems-teaser__fade" aria-hidden="true"></div>
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink" class="portfolio-poems-teaser__read-more">Read more</a>
       </div>
-      <div class="portfolio-poems-preview__quote" aria-hidden="true">
-        <p>经年鱼雁寄江干，小筑新成共倚栏。</p>
-        <p>相随莫惧长夜迥，许卿前路满天星。</p>
-      </div>
-    </article>
+    </section>
   {% endif %}
 {% endfor %}
 

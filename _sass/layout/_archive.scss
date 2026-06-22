@@ -145,70 +145,74 @@
   }
 }
 
-.portfolio-poems-preview {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.75fr);
-  gap: 1.5rem;
-  align-items: start;
+.portfolio-poems-teaser {
   max-width: 820px;
-  margin: 2.25rem 0 2rem;
-  padding-top: 1.5rem;
+  margin: 2.5rem 0 2rem;
+  padding-top: 1.75rem;
   border-top: 1px solid var(--global-border-color);
 }
 
-.portfolio-poems-preview__eyebrow {
-  margin: 0 0 0.35rem;
-  color: var(--global-text-color-light);
-  font-size: $type-size-7;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
-.portfolio-poems-preview__summary {
-  margin: 0 0 0.9rem;
-  color: var(--global-text-color-light);
-  font-size: $type-size-6;
-  line-height: 1.6;
-}
-
-.portfolio-poems-preview__list {
-  display: grid;
-  gap: 0.35rem;
+.portfolio-poems-teaser__header {
   margin-bottom: 1rem;
-  color: var(--global-text-color);
-  font-size: $type-size-6;
-  line-height: 1.5;
-}
 
-.portfolio-poems-preview__link {
-  display: inline-flex;
-  font-size: $type-size-6;
-  font-weight: 700;
-}
-
-.portfolio-poems-preview__quote {
-  padding-left: 1rem;
-  border-left: 2px solid var(--global-link-color);
-  color: var(--global-text-color-light);
-  font-family: "Songti SC", "Noto Serif CJK SC", "STSong", "SimSun", serif;
-  font-size: 0.95rem;
-  line-height: 1.9;
-  letter-spacing: 0;
-
-  p {
-    margin: 0 0 0.75rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+  .archive__item-title {
+    margin-bottom: 0;
   }
 }
 
-@media (max-width: 640px) {
-  .portfolio-poems-preview {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
+.portfolio-poems-teaser__window {
+  position: relative;
+  max-height: 44rem;
+  overflow: hidden;
+}
+
+.portfolio-poems-teaser__content {
+  padding-bottom: 7rem;
+
+  .poems-page {
+    margin-top: 0;
+  }
+
+  .poem-year:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.portfolio-poems-teaser__fade {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 11rem;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--global-bg-color) 70%);
+}
+
+.portfolio-poems-teaser__read-more {
+  position: absolute;
+  left: 50%;
+  bottom: 1.4rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8.5rem;
+  padding: 0.65rem 1.25rem;
+  border: 1px solid var(--global-link-color);
+  border-radius: 4px;
+  background: var(--global-bg-color);
+  color: var(--global-link-color);
+  font-size: $type-size-6;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  transform: translateX(-50%);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background: var(--global-link-color);
+    color: var(--global-bg-color);
+    transform: translateX(-50%) translateY(-1px);
   }
 }
 
@@ -329,6 +333,24 @@
 }
 
 @media (max-width: 640px) {
+  .portfolio-poems-teaser {
+    margin-top: 2rem;
+    padding-top: 1.35rem;
+  }
+
+  .portfolio-poems-teaser__window {
+    max-height: 39rem;
+  }
+
+  .portfolio-poems-teaser__fade {
+    height: 9rem;
+  }
+
+  .portfolio-poems-teaser__read-more {
+    bottom: 1rem;
+    min-width: 7.75rem;
+  }
+
   .poems-page {
     margin-top: 0.5rem;
   }

@@ -1,20 +1,13 @@
 ---
-title: "Teaching experience 2"
+title: "Memory Safety and Programming Language Design"
 collection: teaching
-type: "Workshop"
-permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
-date: 2015-01-01
-location: "City, Country"
+type: "Graduate Course"
+permalink: /teaching/memory-safety-2024
+venue: "Fudan University"
+date: 2025-02-01
+location: "Shanghai, China"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+Teaching Assistant for **安全编程语言设计** (Memory Safety and Programming Language Design), Spring 2024–2025.
 
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
+A graduate-level course exploring memory safety concepts, programming language design for safety, and formal verification techniques, with a focus on Rust and related technologies.

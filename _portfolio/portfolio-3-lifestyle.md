@@ -1,7 +1,7 @@
 ---
 title: "Lifestyle"
-excerpt: "Casual lifestyle photo.<br/><img src='/images/lifestyle.jpg' width='400'>"
+image: "/images/lifestyle.jpg"
 collection: portfolio
 ---
 
-Casual lifestyle photo.
+<img src="/images/lifestyle.jpg" alt="Lifestyle">

@@ -84,6 +84,57 @@
   }
 }
 
+.publication-authors {
+  margin: 0.2rem 0 0.25rem;
+  font-size: $type-size-6;
+  line-height: 1.5;
+}
+
+.publication-venue {
+  margin: 0 0 0.75rem;
+  color: var(--global-text-color-light);
+  font-size: $type-size-6;
+  line-height: 1.5;
+}
+
+.portfolio-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+  margin: 1.5rem 0 2rem;
+  max-width: 760px;
+}
+
+.portfolio-photo-item {
+  min-width: 0;
+
+  .archive__item-title {
+    margin: 0 0 0.75rem;
+  }
+}
+
+.portfolio-photo-link {
+  display: block;
+  border-bottom: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .portfolio-photo-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+}
+
 
 /*
    List view

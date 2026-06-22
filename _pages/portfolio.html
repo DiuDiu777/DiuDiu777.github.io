@@ -7,8 +7,25 @@ author_profile: true
 
 {% include base_path %}
 
+<div class="portfolio-photo-grid">
+  {% for post in site.portfolio %}
+    {% if post.title == "Portrait" or post.title == "Lifestyle" %}
+      <article class="portfolio-photo-item">
+        <h2 class="archive__item-title">
+          <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title }}</a>
+        </h2>
+        {% if post.image %}
+          <a href="{{ base_path }}{{ post.url }}" rel="permalink" class="portfolio-photo-link">
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+          </a>
+        {% endif %}
+      </article>
+    {% endif %}
+  {% endfor %}
+</div>
 
 {% for post in site.portfolio %}
-  {% include archive-single.html %}
+  {% unless post.title == "Portrait" or post.title == "Lifestyle" %}
+    {% include archive-single.html %}
+  {% endunless %}
 {% endfor %}
-

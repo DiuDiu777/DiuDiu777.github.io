@@ -4,9 +4,7 @@ collection: publications
 category: conferences
 permalink: /publication/2024-characterizing-unsafe-encapsulation
 date: 2023-09-11
-venue: 'IEEE'
+venue: '38th IEEE/ACM International Conference on Automated Software Engineering (ASE 2023)'
+authors: 'Shuyao Jiang, Ruiying Zeng, **Zihao Rao**, Jiazhen Gu, Yangfan Zhou, Michael R. Lyu'
 paperurl: 'https://ieeexplore.ieee.org/abstract/document/10298344'
-citation: 'Co-author One, Co-author Two, **Zihao Rao**'
 ---
-
-Revealing performance issues in server-side WebAssembly runtimes via differential testing.

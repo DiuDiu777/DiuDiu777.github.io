@@ -1,0 +1,177 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<!-- Particle Background Canvas -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- Academic Homepage Content -->
+<div class="academic-home">
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-avatar-wrapper reveal">
+      {% if page.avatar %}
+      <img src="{{ page.avatar | relative_url }}" alt="{{ page.hero_name }}" class="hero-avatar">
+      {% else %}
+      <img src="{{ site.author.avatar | prepend: '/images/' | relative_url }}" alt="{{ site.author.name }}" class="hero-avatar">
+      {% endif %}
+    </div>
+
+    <h1 class="hero-name reveal">{{ page.hero_name | default: site.author.name }}</h1>
+    <p class="hero-name-cn reveal">{{ page.hero_name_cn }}</p>
+
+    <div class="hero-title reveal">
+      <span id="typewriter-text" data-texts='{{ page.typewriter_texts | jsonify | escape }}'></span>
+    </div>
+
+    {% if page.hero_badges %}
+    <div class="hero-badges reveal">
+      {% for badge in page.hero_badges %}
+      <a href="{{ badge.url | default: '#' }}" class="hero-badge" {% if badge.url %}target="_blank" rel="noopener"{% endif %}>
+        <i class="{{ badge.icon }}"></i> {{ badge.label }}
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="hero-social reveal">
+      {% if site.author.email %}
+      <a href="mailto:{{ site.author.email }}" title="Email" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      {% endif %}
+      {% if site.author.googlescholar %}
+      <a href="{{ site.author.googlescholar }}" title="Google Scholar" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+      {% endif %}
+      {% if site.author.github %}
+      <a href="https://github.com/{{ site.author.github }}" title="GitHub" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      {% endif %}
+      {% if site.author.orcid %}
+      <a href="{{ site.author.orcid }}" title="ORCID" target="_blank" rel="noopener" aria-label="ORCID">
+        <i class="fab fa-orcid"></i>
+      </a>
+      {% endif %}
+      {% if site.author.linkedin %}
+      <a href="https://linkedin.com/in/{{ site.author.linkedin }}" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      {% endif %}
+      {% if site.author.twitter %}
+      <a href="https://twitter.com/{{ site.author.twitter }}" title="Twitter / X" target="_blank" rel="noopener" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      {% endif %}
+      {% if site.author.bluesky %}
+      <a href="https://bsky.app/profile/{{ site.author.bluesky }}" title="Bluesky" target="_blank" rel="noopener" aria-label="Bluesky">
+        <i class="fab fa-bluesky"></i>
+      </a>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section class="home-section reveal">
+    <div class="section-header">
+      <span class="section-icon">👋</span>
+      <h2 class="section-title">About Me</h2>
+    </div>
+    <div class="section-divider"></div>
+    <div class="page__content" style="color: var(--global-text-color); line-height: 1.8;">
+      {{ content }}
+    </div>
+  </section>
+
+  <!-- Research Interests -->
+  {% if page.interests %}
+  <section class="home-section reveal">
+    <div class="section-header">
+      <span class="section-icon">🔬</span>
+      <h2 class="section-title">Research Interests</h2>
+    </div>
+    <div class="section-divider"></div>
+    <div class="interests-grid reveal-stagger">
+      {% for interest in page.interests %}
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <span class="flip-icon">{{ interest.icon }}</span>
+            <span class="flip-label">{{ interest.name }}</span>
+          </div>
+          <div class="flip-card-back">
+            <p class="flip-desc">{{ interest.description }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Latest News -->
+  {% if page.news %}
+  <section class="home-section reveal">
+    <div class="section-header">
+      <span class="section-icon">📰</span>
+      <h2 class="section-title">Latest News</h2>
+    </div>
+    <div class="section-divider"></div>
+    <div class="news-timeline">
+      {% for item in page.news %}
+      <div class="news-item">
+        <div class="news-date">{{ item.date }}</div>
+        <div class="news-text">{{ item.text | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Selected Publications -->
+  {% if page.selected_publications %}
+  <section class="home-section reveal">
+    <div class="section-header">
+      <span class="section-icon">📄</span>
+      <h2 class="section-title">Selected Publications</h2>
+    </div>
+    <div class="section-divider"></div>
+    <div class="pubs-list reveal-stagger">
+      {% for pub in page.selected_publications %}
+      <a href="{{ pub.url | default: '#' }}" class="pub-card" {% if pub.url %}target="_blank" rel="noopener"{% endif %}>
+        <div class="pub-year">{{ pub.year }}</div>
+        <div class="pub-info">
+          <h3 class="pub-title">{{ pub.title }}</h3>
+          <p class="pub-authors">{{ pub.authors }}</p>
+          <p class="pub-venue">{{ pub.venue }}</p>
+          {% if pub.links %}
+          <div class="pub-links">
+            {% for link in pub.links %}
+            <span class="pub-link"><i class="{{ link.icon }}"></i> {{ link.label }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% if page.publications_url %}
+    <div style="text-align: center; margin-top: 1.5rem;">
+      <a href="{{ page.publications_url }}" class="hero-badge" style="font-size: 0.95rem;">
+        View All Publications →
+      </a>
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
+</div>
+
+<!-- Load custom scripts -->
+<script src="{{ '/assets/js/particles.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/academic-home.js' | relative_url }}"></script>

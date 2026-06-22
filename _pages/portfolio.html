@@ -25,7 +25,31 @@ author_profile: true
 </div>
 
 {% for post in site.portfolio %}
-  {% unless post.title == "Portrait" or post.title == "Lifestyle" %}
+  {% if post.title == "Selected Poems" %}
+    <article class="portfolio-poems-preview">
+      <div class="portfolio-poems-preview__body">
+        <p class="portfolio-poems-preview__eyebrow">Original poems · 2016-2025</p>
+        <h2 class="archive__item-title">
+          <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title }}</a>
+        </h2>
+        <p class="portfolio-poems-preview__summary">{{ post.excerpt }}</p>
+        <div class="portfolio-poems-preview__list" aria-label="Selected poem preview">
+          <span>2025 · 题新居</span>
+          <span>2024 · 相思曲</span>
+          <span>2023 · 抒怀三首</span>
+        </div>
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink" class="portfolio-poems-preview__link">Read poems</a>
+      </div>
+      <div class="portfolio-poems-preview__quote" aria-hidden="true">
+        <p>经年鱼雁寄江干，小筑新成共倚栏。</p>
+        <p>相随莫惧长夜迥，许卿前路满天星。</p>
+      </div>
+    </article>
+  {% endif %}
+{% endfor %}
+
+{% for post in site.portfolio %}
+  {% unless post.title == "Portrait" or post.title == "Lifestyle" or post.title == "Selected Poems" %}
     {% include archive-single.html %}
   {% endunless %}
 {% endfor %}

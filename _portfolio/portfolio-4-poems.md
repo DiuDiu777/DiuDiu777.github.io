@@ -1,11 +1,11 @@
 ---
 title: "Selected Poems"
-excerpt: "原创诗作，按年份由新至旧排列。"
+excerpt: "Original poems arranged from newest to oldest."
 collection: portfolio
 ---
 
 <div class="poems-page">
-  <p class="poems-intro">原创诗作小辑，按年份由新至旧排列。</p>
+  <p class="poems-intro">Original poems arranged from newest to oldest.</p>
 
   <section class="poem-year" aria-labelledby="poems-2025">
     <h2 id="poems-2025">2025</h2>

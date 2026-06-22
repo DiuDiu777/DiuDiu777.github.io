@@ -45,6 +45,9 @@ layout: default
               {% if page.venue %}Published in <i>{{ page.venue }}</i>{% endif %}{% if page.venue and page.date %}, {% endif %}{% if page.date %}{{ page.date | default: "1900-01-01" | date: "%Y" }}{% endif %}
             </p>
           {% endif %}
+          {% if page.paperurl %}
+            <p class="publication-links"><a href="{{ page.paperurl }}" target="_blank" rel="noopener">Paper</a></p>
+          {% endif %}
         {% elsif page.venue and page.date %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}

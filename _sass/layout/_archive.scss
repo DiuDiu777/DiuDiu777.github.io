@@ -91,10 +91,20 @@
 }
 
 .publication-venue {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.4rem;
   color: var(--global-text-color-light);
   font-size: $type-size-6;
   line-height: 1.5;
+}
+
+.publication-links {
+  margin: 0 0 0.75rem;
+  font-size: $type-size-6;
+  line-height: 1.5;
+
+  a {
+    font-weight: 600;
+  }
 }
 
 .portfolio-photo-grid {

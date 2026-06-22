@@ -40,6 +40,16 @@ I am a Ph.D. student in Computer Science and Technology at **Fudan University**,
 - **[Verify API Soundness](https://github.com/safer-rust/RAPx)** — Working on formal verification of Rust API safety properties using the RAPx framework.
 - **[tag-std](https://github.com/safer-rust/safety-tags)** — Developing a tag-based methodology for annotating and auditing safety properties in unsafe Rust code, with application to the Rust standard library.
 
+## 💼 Experience
+
+- **Ant Group** — Java R&D Engineer Intern, Jun 2022 – Sep 2022.
+- **Huabao Trust** — Information Systems Requirements Analyst Intern, Mar 2023 – Aug 2023.
+
+## 🏆 Recent Awards
+
+- **Special Prize, Shanghai Open Source Innovation Outstanding Achievement Award** (上海开源创新卓越成果奖特等奖).
+- **First Prize, Rust Language Research and Innovative Application Track, OpenAtom Competition** (开放原子大赛Rust语言研究与创新应用赛一等奖).
+
 ## 👨‍🏫 Advisors
 
 - [Dr. Hui Xu (徐辉)](https://hxuhack.github.io/) — Primary advisor

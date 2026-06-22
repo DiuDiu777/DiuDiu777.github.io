@@ -47,6 +47,9 @@
           {% if post.venue %}Published in <i>{{ post.venue }}</i>{% endif %}{% if post.venue and post.date %}, {% endif %}{% if post.date %}{{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}
         </p>
       {% endif %}
+      {% if post.paperurl %}
+        <p class="publication-links"><a href="{{ post.paperurl }}" target="_blank" rel="noopener">Paper</a></p>
+      {% endif %}
     {% else %}
       {% if post.collection == 'teaching' %}
         <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>

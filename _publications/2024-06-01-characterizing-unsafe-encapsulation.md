@@ -1,6 +1,7 @@
 ---
 title: "Revealing Performance Issues in Server-Side WebAssembly Runtimes Via Differential Testing"
 collection: publications
+category: conferences
 permalink: /publication/2024-characterizing-unsafe-encapsulation
 date: 2023-09-11
 venue: 'IEEE'

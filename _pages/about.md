@@ -29,6 +29,13 @@ hero_badges:
 
 I am a Ph.D. student in Computer Science and Technology at **Fudan University**, where I also completed my B.Eng. degree. My research interests lie at the intersection of **programming languages** and **software engineering**, with a focus on **Rust**, **AI for Software Engineering (AI4SE)**, and **static program analysis**.
 
+## 🔬 Research Interests
+
+- **🦀 Rust** — Safe systems programming with Rust's ownership model and type system.
+- **🤖 AI4SE** — Applying AI/ML techniques to improve software engineering workflows.
+- **🔍 Static Analysis** — Program analysis for bug detection, verification, and optimization.
+- **🔧 Formal Methods** — Mathematical approaches to software correctness and verification.
+
 ## 🔬 Current Work
 
 - **[Verify API Soundness](https://github.com/safer-rust/RAPx)** — Working on formal verification of Rust API safety properties using the RAPx framework.
@@ -36,8 +43,8 @@ I am a Ph.D. student in Computer Science and Technology at **Fudan University**,
 
 ## 👨‍🏫 Advisors
 
-- [Prof. Hui Xu (徐辉)](https://hxuhack.github.io/) — Primary advisor
-- [IIPL Lab](https://iipl.fudan.edu.cn/) — [Member Page 1](https://iipl.fudan.edu.cn/70/f0/c45865a684272/page.htm) | [Member Page 2](https://iipl.fudan.edu.cn/_s627/70/ee/c45865a684270/page.psp)
+- [Dr. Hui Xu (徐辉)](https://hxuhack.github.io/) — Primary advisor
+- [IIPL Lab](https://iipl.fudan.edu.cn/) — [周扬帆](https://iipl.fudan.edu.cn/70/f0/c45865a684272/page.htm) | [王新](https://iipl.fudan.edu.cn/_s627/70/ee/c45865a684270/page.psp)
 
 ## 🔗 Links
 

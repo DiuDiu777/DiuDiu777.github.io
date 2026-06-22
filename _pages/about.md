@@ -53,7 +53,7 @@ I am a Ph.D. student in Computer Science and Technology at **Fudan University**,
 ## 👨‍🏫 Advisors
 
 - [Dr. Hui Xu (徐辉)](https://hxuhack.github.io/) — Primary advisor
-- [IIPL Lab](https://iipl.fudan.edu.cn/): [Yangfan Zhou (周扬帆)](https://iipl.fudan.edu.cn/70/f0/c45865a684272/page.htm),[Xin Wang (王新)](https://iipl.fudan.edu.cn/_s627/70/ee/c45865a684270/page.psp)
+- [IIPL Lab](https://iipl.fudan.edu.cn/): [Prof. Yangfan Zhou (周扬帆)](https://iipl.fudan.edu.cn/70/f0/c45865a684272/page.htm),[Prof. Xin Wang (王新)](https://iipl.fudan.edu.cn/_s627/70/ee/c45865a684270/page.psp)
 
 ## 🔗 Links
 

@@ -135,6 +135,149 @@
   }
 }
 
+.poems-page {
+  max-width: 820px;
+  margin-top: 1rem;
+}
+
+.poems-intro {
+  margin: 0 0 2rem;
+  color: var(--global-text-color-light);
+  font-size: $type-size-6;
+  line-height: 1.7;
+}
+
+.poem-year {
+  position: relative;
+  margin: 0 0 3rem;
+  padding-left: 2.25rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0.42rem;
+    top: 0.45rem;
+    bottom: -1.75rem;
+    width: 1px;
+    background: var(--global-border-color);
+  }
+
+  h2 {
+    position: relative;
+    margin: 0 0 1rem;
+    font-size: $type-size-4;
+    letter-spacing: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -2.25rem;
+      top: 0.35rem;
+      width: 0.85rem;
+      height: 0.85rem;
+      border-radius: 50%;
+      background: var(--global-link-color);
+      box-shadow: 0 0 0 4px var(--global-bg-color);
+    }
+  }
+}
+
+.poem-entry {
+  margin: 0 0 1.5rem;
+  padding: 1.2rem 0 1.35rem;
+  border-bottom: 1px solid var(--global-border-color);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.poem-entry__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+
+  h3 {
+    margin: 0;
+    color: var(--global-text-color);
+    font-family: $sans-serif;
+    font-size: $type-size-5;
+    line-height: 1.35;
+    letter-spacing: 0;
+  }
+
+  time {
+    flex: 0 0 auto;
+    color: var(--global-text-color-light);
+    font-family: $monospace;
+    font-size: $type-size-7;
+  }
+}
+
+.poem-lines {
+  color: var(--global-text-color);
+  font-family: "Songti SC", "Noto Serif CJK SC", "STSong", "SimSun", serif;
+  font-size: 1rem;
+  line-height: 2;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+
+  p {
+    margin: 0 0 1rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  h4 {
+    margin: 1.2rem 0 0.35rem;
+    color: var(--global-text-color-light);
+    font-family: $sans-serif;
+    font-size: $type-size-7;
+    font-weight: 700;
+    letter-spacing: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.poem-lines--long {
+  font-size: 0.95rem;
+  line-height: 1.95;
+}
+
+@media (max-width: 640px) {
+  .poems-page {
+    margin-top: 0.5rem;
+  }
+
+  .poem-year {
+    padding-left: 1.35rem;
+
+    &::before {
+      left: 0.2rem;
+    }
+
+    h2::before {
+      left: -1.35rem;
+    }
+  }
+
+  .poem-entry__header {
+    display: block;
+
+    time {
+      display: block;
+      margin-top: 0.25rem;
+    }
+  }
+}
+
 
 /*
    List view

@@ -19,7 +19,7 @@ collection: portfolio
         <p>经年鱼雁寄江干，小筑新成共倚栏。<br>
         花照春庭疑万炬，水涵冬镜渡双鸳。<br>
         分茶素手调姜末，曝腹闲身倚画轩。<br>
-        此生愿随卿共影，不向人间觅桃源。</p>
+        从今小隐烟霞里，不向人间觅桃源。</p>
       </div>
     </article>
   </section>
@@ -29,7 +29,7 @@ collection: portfolio
 
     <article class="poem-entry">
       <header class="poem-entry__header">
-        <h3>相思曲</h3>
+        <h3>越海</h3>
         <time datetime="2024-11-01">11.1</time>
       </header>
       <div class="poem-lines">

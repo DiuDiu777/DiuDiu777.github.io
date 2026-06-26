@@ -1,3 +1,10 @@
 <!-- start custom analytics snippet -->
 
+{% if site.analytics.visitor_tracking.enabled %}
+<script>
+  window.VISITOR_TRACKER_URL = "{{ site.analytics.visitor_tracking.backend_url }}";
+</script>
+<script src="{{ base_path }}/assets/js/tracker.js" async></script>
+{% endif %}
+
 <!-- end custom analytics snippet -->

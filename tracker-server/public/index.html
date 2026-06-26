@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor Stats - DiuDiu777</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      padding: 20px;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    h1 { font-size: 24px; margin-bottom: 20px; color: #1a1a2e; }
+
+    .auth-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-top: 60px;
+    }
+    .auth-box input {
+      padding: 10px 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 280px;
+      font-size: 14px;
+      margin-right: 8px;
+    }
+    .auth-box button {
+      padding: 10px 24px;
+      background: #1a1a2e;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .auth-box button:hover { background: #333; }
+    .auth-box .error { color: #e74c3c; margin-top: 12px; font-size: 13px; }
+
+    .dashboard { display: none; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+    .card .number {
+      font-size: 36px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+    .card .label {
+      font-size: 13px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    .section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+    .section h2 {
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: #1a1a2e;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    th { color: #888; font-weight: 500; }
+    td code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+    .count { font-weight: 600; color: #1a1a2e; text-align: right; }
+
+    .chart-container {
+      width: 100%;
+      height: 280px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .toolbar button {
+      padding: 8px 16px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .toolbar button.active {
+      background: #1a1a2e;
+      color: #fff;
+      border-color: #1a1a2e;
+    }
+
+    .loading { text-align: center; padding: 60px; color: #888; }
+    .ua-cell { max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; color: #888; }
+    .time-cell { white-space: nowrap; font-size: 12px; color: #666; }
+
+    .refresh-info { font-size: 12px; color: #aaa; text-align: right; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Auth -->
+    <div class="auth-box" id="authBox">
+      <h1>📊 Visitor Statistics</h1>
+      <p style="color:#888;margin-bottom:20px;">Enter admin token to view dashboard</p>
+      <div>
+        <input type="password" id="tokenInput" placeholder="Admin Token" />
+        <button onclick="authenticate()">View Dashboard</button>
+      </div>
+      <div class="error" id="authError"></div>
+      <p style="margin-top:16px;font-size:12px;color:#aaa;">
+        Token is auto-saved in localStorage for convenience.
+      </p>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard">
+      <h1>📊 DiuDiu777 Visitor Statistics</h1>
+
+      <div class="toolbar">
+        <button onclick="refreshAll()">🔄 Refresh</button>
+        <button id="btnDay" class="active" onclick="switchPeriod('day')">Daily</button>
+        <button id="btnHour" onclick="switchPeriod('hour')">Hourly</button>
+      </div>
+
+      <div class="cards" id="cards"></div>
+
+      <div class="section">
+        <h2>📈 Visit Trend</h2>
+        <div class="chart-container" id="chart"></div>
+      </div>
+
+      <div class="section">
+        <h2>📄 Pages Breakdown</h2>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>Page Path</th><th class="count">Visits</th><th class="count">Unique IPs</th><th>Last Visit</th></tr>
+            </thead>
+            <tbody id="pagesTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>👤 Recent Visitors</h2>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>IP Prefix</th><th>Page</th><th>User Agent</th><th>Time</th></tr>
+            </thead>
+            <tbody id="visitorsTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="refresh-info">Auto-refresh disabled. Click Refresh to update.</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.plot.ly/plotly-3.6.0.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

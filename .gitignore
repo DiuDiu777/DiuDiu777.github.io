@@ -21,3 +21,10 @@ package-lock.json
 
 # Ignore files created by MacOS
 .DS_Store
+
+# Ignore tracker-server runtime files
+tracker-server/node_modules/
+tracker-server/visitors.db
+tracker-server/visitors.db-shm
+tracker-server/visitors.db-wal
+tracker-server/.env
